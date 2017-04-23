@@ -1,0 +1,22 @@
+name: prettier
+version: master
+summary: opinionated JavaScript formatter
+description: |
+  Prettier is an opinionated JavaScript formatter inspired by refmt with
+  advanced support for language features from ES2017, JSX, and Flow. It
+  removes all original styling and ensures that all outputted JavaScript
+  conforms to a consistent style. (See this blog post)
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: strict
+
+apps:
+  prettier:
+    command: prettier
+    plugs: [home]
+
+parts:
+  prettier:
+    source: .
+    plugin: nodejs
+    node-package-manager: yarn
